@@ -20,7 +20,6 @@ function App() {
   
   // Product Filter
   const productFilter = async (c) => {
-    console.log(c);
     if(c === 'all') {
       await setFilteredProduct(product)
     } else {
