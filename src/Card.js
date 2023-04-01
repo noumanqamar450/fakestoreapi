@@ -21,7 +21,7 @@ const Card = (props) => {
                         <Rating initialValue={rating.rate} readonly='true' />({rating.count})
                     </p>
                     <div className="card-btns">
-                        <a href="/" className="btn btn-primary w-100">Buy Now</a>
+                        <button className="btn btn-primary w-100">Buy Now</button>
                         <button className="btn btn-success w-100" onClick={()=>{
                             setModal(true)
                         }}>View</button>

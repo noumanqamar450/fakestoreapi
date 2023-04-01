@@ -30,7 +30,7 @@ function App() {
   
   if (product !== null) {
     return (
-      <div className="row">
+      <div className="row mb-5">
         {/* Category */}
         <div className="col-lg-3 mb-4">
           <h3>Filter</h3>
