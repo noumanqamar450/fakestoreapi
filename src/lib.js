@@ -24,11 +24,14 @@ export const getCategory = async () => {
 
 // List Handler
 
-export const clickHandler = (e) => {
+export const clickHandler = (e, index) => {
     let list = document.querySelectorAll('.list-group-item')
+    let badge = document.querySelectorAll('.list-group-item .badge')
     for (let i = 0; i < list.length; i++) {
         list[i].classList.remove('active')
+        badge[i].classList.remove('text-bg-info')
     }
+    badge[index].classList.add('text-bg-info')
     e.target.classList.add('active')
 }
 
