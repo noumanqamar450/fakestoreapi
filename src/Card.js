@@ -28,6 +28,8 @@ const Card = (props) => {
                     </div>
                 </div>
             </div>
+
+            {/* Product Modal */}
             <div className={modal ? 'product-modal active' : 'product-modal'}>
                 <div className="modal-overlay" onClick={() => {
                     setModal(false)
