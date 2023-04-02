@@ -72,7 +72,7 @@ function App() {
               filteredProduct?.length > 0 && (
                 filteredProduct.map((p) => (
                   <div className='col-md-4' key={p.id}>
-                    <Card id={p.id} title={p.title} desc={p.description} price={p.price} cate={p.category} image={p.image} rating={p.rating}/>
+                    <Card products={p}/>
                   </div>
                 ))
               ) 

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Rating } from 'react-simple-star-rating'
 
 const Card = (props) => {
-    const { id, title, desc, price, cate, image, rating} = props
+    const { id, title, desc, price, cate, image, rating} = props.products
     const [modal, setModal] = useState(false)
     return (
         <>
@@ -18,7 +18,7 @@ const Card = (props) => {
                     <h5>Rs. {price}/-</h5>
                     {/* https://www.npmjs.com/package/react-simple-star-rating */}
                     <p className='card-rating'>
-                        <Rating initialValue={rating.rate} readonly='true' />({rating.count})
+                        <Rating initialValue={rating.rate} readonly='true' /> {rating.rate} ({rating.count})
                     </p>
                     <div className="card-btns">
                         <button className="btn btn-primary w-100">Buy Now</button>
@@ -53,7 +53,7 @@ const Card = (props) => {
                             </h5>
                             <h4>Rs. {price}/-</h4>
                             <p className='modal-rating'>
-                                <Rating initialValue={rating.rate} readonly='true' />({rating.count})
+                                <Rating initialValue={rating.rate} readonly='true' /> {rating.rate} ({rating.count})
                             </p>
                             <p>{desc}</p>
                             <span className="badge text-bg-primary cate">
