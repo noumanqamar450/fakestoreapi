@@ -22,6 +22,7 @@ export const getCategory = async () => {
     }
 }
 
+
 // List Handler
 
 export const clickHandler = (e, index) => {

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Rating } from 'react-simple-star-rating'
 
 const Card = (props) => {
-    const { id, title, desc, price, cate, image, rating} = props.products
+    const { id, title, description, price, cate, image, rating} = props.products
     const [modal, setModal] = useState(false)
     return (
         <>
@@ -48,14 +48,14 @@ const Card = (props) => {
                             <h3>{title}</h3>
                             <h5 className='modal-sku'>
                                 <span className="badge text-bg-primary">
-                                    SKU PRO-{id}
+                                    SKU: PRO-{id}
                                 </span>
                             </h5>
                             <h4>Rs. {price}/-</h4>
                             <p className='modal-rating'>
                                 <Rating initialValue={rating.rate} readonly='true' /> {rating.rate} ({rating.count})
                             </p>
-                            <p>{desc}</p>
+                            <p>{description}</p>
                             <span className="badge text-bg-primary cate">
                                 {cate}
                             </span>
