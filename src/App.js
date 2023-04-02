@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import { getProduct, getCategory, clickHandler } from './lib';
+import { getProduct, getCategory } from './lib';
 import Loader from './Loader';
 import Card from './Card';
+import Category from './Category';
 
 function App() {
   const [product, setProducts] = useState(null)
@@ -37,31 +38,7 @@ function App() {
           <div className="sticky-top mt-3">
             <h3>Filter</h3>
             <hr />
-            <div className="list-group">
-              <button className="list-group-item list-group-item-action active" onClick={(e)=>{
-                clickHandler(e, 0)
-                productFilter('all')
-              }} aria-current="true">
-                All 
-                <span className="badge text-bg-success float-end text-bg-info">
-                  {product?.length}
-                </span>
-              </button>
-              {
-                category?.length > 0 && (
-                  category.map((c, i) => (
-                    <button className="list-group-item list-group-item-action" key={i} onClick={(e) => {
-                      clickHandler(e, i = i + 1)
-                      productFilter(c)
-                    }}>{c}
-                      <span className="badge text-bg-success float-end">
-                        {product?.filter(p => p.category === c).length}
-                      </span>
-                    </button>
-                  ))
-                )
-              }
-            </div>
+            <Category category={category} product={product} productFilter={productFilter}/>
           </div>
         </div>
 
